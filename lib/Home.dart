@@ -23,9 +23,6 @@ class _HomeState extends State<Home> {
               icon: new Icon(Icons.face),
               onPressed: ()=>debugPrint("Face")
           )
-
-
-
           
         ],
       ),

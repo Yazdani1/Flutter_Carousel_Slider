@@ -32,7 +32,7 @@ class _HomeState extends State<Home> {
 
 
       body: Center(
-        child: SizedBox(
+        child: Container(
           height: 350.0,
           width: 300.0,
           child: Carousel(
@@ -40,17 +40,17 @@ class _HomeState extends State<Home> {
             autoplay: true,
             animationCurve: Curves.fastOutSlowIn,
             animationDuration: Duration(milliseconds: 1000),
-            dotSize: 10.0,
+            dotSize: 7.0,
             dotIncreasedColor: Colors.red,
             dotBgColor: Colors.transparent,
-            dotPosition: DotPosition.bottomCenter,
-            dotVerticalPadding: 10.0,
+            dotPosition: DotPosition.bottomLeft,
+            dotVerticalPadding: 7.0,
             showIndicator: true,
             borderRadius: true,
-            indicatorBgPadding: 7.0,
+            indicatorBgPadding: 10.0,
             overlayShadow: true,
             overlayShadowColors: Colors.black.withOpacity(0.4),
-            overlayShadowSize: 0.7,
+            overlayShadowSize: 10.0,
             images: [
               NetworkImage('https://www.bls.gov/spotlight/2017/sports-and-exercise/images/cover_image.jpg'),
               NetworkImage('https://www.lboro.ac.uk/media/wwwlboroacuk/external/content/research/sti/slide1.png'),

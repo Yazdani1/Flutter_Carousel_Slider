@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:carousel_pro/carousel_pro.dart';
 
 
 class Home extends StatefulWidget {
@@ -9,7 +10,9 @@ class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return new Scaffold(
-
+      
+      backgroundColor: Color(0xFF222240),
+      
       appBar: new AppBar(
         title: new Text("Image Carosol"),
         backgroundColor: Colors.green,
@@ -23,9 +26,44 @@ class _HomeState extends State<Home> {
               icon: new Icon(Icons.face),
               onPressed: ()=>debugPrint("Face")
           )
-          
+
         ],
       ),
+
+
+      body: Center(
+        child: SizedBox(
+          height: 350.0,
+          width: 300.0,
+          child: Carousel(
+            boxFit: BoxFit.cover,
+            autoplay: true,
+            animationCurve: Curves.fastOutSlowIn,
+            animationDuration: Duration(milliseconds: 1000),
+            dotSize: 10.0,
+            dotIncreasedColor: Colors.red,
+            dotBgColor: Colors.transparent,
+            dotPosition: DotPosition.bottomCenter,
+            dotVerticalPadding: 10.0,
+            showIndicator: true,
+            borderRadius: true,
+            indicatorBgPadding: 7.0,
+            overlayShadow: true,
+            overlayShadowColors: Colors.black.withOpacity(0.4),
+            overlayShadowSize: 0.7,
+            images: [
+              NetworkImage('https://www.bls.gov/spotlight/2017/sports-and-exercise/images/cover_image.jpg'),
+              NetworkImage('https://www.lboro.ac.uk/media/wwwlboroacuk/external/content/research/sti/slide1.png'),
+              NetworkImage('https://www.gc.ac.nz/wp-content/uploads/2018/03/sports-tools-640-417.jpg'),
+              NetworkImage('https://www.valeofglamorgan.gov.uk/Images/Sports/Sports-equipment-Cropped-600x313.jpg')
+
+            ],
+          ),
+        ),
+      ),
+
+
+
     );
   }
 }
